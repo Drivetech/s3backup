@@ -8,10 +8,12 @@ if [[ ${BACKUP_TIMEZONE} ]]; then
   echo "${BACKUP_TIMEZONE}" >  /etc/timezone
 fi
 
-# Every day at 2am
-BACKUP_CRON_SCHEDULE=${BACKUP_CRON_SCHEDULE:-"0 2 * * *"}
-
-echo "${BACKUP_CRON_SCHEDULE} /usr/local/bin/backup" > /etc/crontabs/root
-
-# Starting cron
-crond -f -d 0
+if [[ ${BACKUP_CRON_SCHEDULE} ]]; then
+  # Every day at 2am
+  BACKUP_CRON_SCHEDULE=${BACKUP_CRON_SCHEDULE}
+  echo "${BACKUP_CRON_SCHEDULE} /usr/local/bin/backup" > /etc/crontabs/root
+  # Starting cron
+  crond -f -d 0
+else
+  /usr/local/bin/backup
+fi
