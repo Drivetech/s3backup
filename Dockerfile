@@ -1,9 +1,11 @@
 FROM alpine:latest
 
-RUN apk add --update-cache python py-pip ca-certificates tzdata \
+MAINTAINER Leonardo Gatica <lgatica@protonmail.com>
+
+RUN apk add --no-cache python py-pip ca-certificates tzdata \
+    && pip install --upgrade pip \
     && pip install s3cmd \
-    && rm -fR /etc/periodic \
-    && rm -rf /var/cache/apk/*
+    && rm -fR /etc/periodic
 
 COPY backup /usr/local/bin/
 RUN chmod +x /usr/local/bin/backup
