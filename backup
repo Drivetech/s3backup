@@ -10,6 +10,9 @@ BACKUP_AWS_S3_PATH=${BACKUP_AWS_S3_PATH:-}
 
 # prepare unique name with date like 2015-09-04T03-40-34UTC
 backup_time="$(date -Iseconds | sed 's/:/-/g')"
+if [ ! -d /backup/output ]; then
+  mkdir /backup/output
+fi
 backup_archive=/backup/output/${BACKUP_PREFIX}.${backup_time}.tar.gz
 # time to create an archive
 tar -cvzf "${backup_archive}" /backup/input
