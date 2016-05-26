@@ -1,11 +1,10 @@
 # s3backup
 
+[![Image Layers](https://imagelayers.io/badge/lgatica/s3backup:latest.svg)](https://imagelayers.io/?images=lgatica/s3backup:latest 'Get your own badge on imagelayers.io')
 [![Docker Stars](https://img.shields.io/docker/stars/lgatica/s3backup.svg?style=flat-square)](https://hub.docker.com/r/lgatica/s3backup)
 [![Docker Pulls](https://img.shields.io/docker/pulls/lgatica/s3backup.svg?style=flat-square)](https://hub.docker.com/r/lgatica/s3backup/)
-[![Image Size](https://img.shields.io/imagelayers/image-size/lgatica/s3backup/latest.svg?style=flat-square)](https://imagelayers.io/?images=lgatica/s3backup:latest)
-[![Image Layers](https://img.shields.io/imagelayers/layers/lgatica/s3backup/latest.svg?style=flat-square)](https://imagelayers.io/?images=lgatica/s3backup:latest)
 
-Docker Image with [Alpine Linux](http://www.alpinelinux.org) and [s3cmd](http://s3tools.org/s3cmd) for backups to s3
+> Docker Image with [Alpine Linux](http://www.alpinelinux.org) and [s3cmd](http://s3tools.org/s3cmd) for backups to s3
 
 ## Use
 
